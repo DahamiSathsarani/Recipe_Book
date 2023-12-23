@@ -1,0 +1,15 @@
+.ViewRecipe{
+    width: 100%;
+    height: 100vh;
+}
+
+.ViewRecipeHeader{
+    width: 100%;
+    height: 60%;
+}
+
+.ViewRecipeImage{
+    width: 400px;
+    height: 400px;
+    margin-left: 5%;
+}

@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+
+const ingredientController = require('../Controllers/ingredientController');
+
+// router.post('/createUser', categoryController.createUser);
+router.get('/fetchIngredients', ingredientController.fetchIngredients);
+// router.post('/fetchUser', categoryController.fetchUser);
+// router.patch('/updateUser', categoryController.updateUser);
+// router.patch('/softDeleteUser/:id', categoryController.softDeleteUser);
+// router.delete('/deleteUser/:id', categoryController.deleteUser);
+
+module.exports = router;

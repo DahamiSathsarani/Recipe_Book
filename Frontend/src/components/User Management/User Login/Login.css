@@ -1,0 +1,80 @@
+.Login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginCard{
+    width: 640px;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5%;
+}
+
+.LoginCard div{
+    width: 50%;
+    height: 100%;
+}
+
+.LoginHeader{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 10%;
+    font-size: 25px;
+}
+
+.LoginForm{
+    width: 95%;
+    margin-left: 3%;
+    margin-right: 3%;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginContent{
+    justify-content: center;
+}
+
+.LoginForm label{
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+.LoginForm input{
+    width: 280px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: grey;
+    opacity: 0.5;
+    margin-top: 5%;
+}
+
+.LoginForm p{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.LoginLink{
+    text-decoration: none;
+    text-align: center;
+}
+
+.LoginCard .LoginDiv2 img{
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	border-radius: 0 3% 3% 0;
+}
+
+.LoginButton{
+    width: 280px;
+    height: 40px;
+    margin-top: 10%;
+}

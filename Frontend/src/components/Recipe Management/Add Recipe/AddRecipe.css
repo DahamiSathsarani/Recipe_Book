@@ -1,0 +1,102 @@
+.AddRecipe{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddRecipeContent{
+    width: 95%;
+    height: 80vh;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px gray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AddRecipeh2{
+    margin-top: 2%;
+    font-size: 30px;
+
+}
+
+.AddRecipeForm{
+    width: 100%;
+    height: 90%;
+}
+
+.AddRecipeDiv{
+    width: 100%;
+    height: 10%;
+    margin-left: 2%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+}
+
+.AddRecipeLabel{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+.AddRecipeInput{
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    margin-left: 3%;
+    background-color: rgb(187, 182, 182);
+    opacity: 0.6;
+    border: none;
+}
+
+.AddRecipeInputDiv{
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.AddRecipeInputDiv1{
+    width: 85%;
+    height: 100%;
+}
+
+.AddRecipeInputDiv2{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddRecipeInputIngredient{
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    margin-left: 3%;
+    background-color: rgb(187, 182, 182);
+    border: none;
+}
+
+.AddRecipeInputButton{
+    width: 35%;
+    height: 80%;
+    margin: 0 5% 0 0;
+    padding: 0;
+}
+
+.AddRecipeInputDiv select{
+    margin-left: 3%;
+    border-radius: 10px;
+    background-color: rgb(187, 182, 182);
+    border: none;
+}
+
+.AddRecipeButton{
+    width: 10%;
+}
