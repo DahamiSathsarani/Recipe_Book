@@ -1,0 +1,109 @@
+.Register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegisterCard{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 0 10px gray;
+    /* background-color: #161f37; */
+}
+
+.RegisterCard div{
+    height: 100%;
+}
+
+.RegisterDiv1{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegisterDiv2{
+    width: 65%;
+}
+
+.RegisterDiv1 img{
+    width: 65%;
+    height: 70%;
+    border-radius: 10px;
+}
+
+.RegisterDiv2 .RegisterHeader{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff812d;
+}
+
+.RegisterDiv2 .RegisterHeader h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.RegisterDiv2 .RegisterForm{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegisterDiv2 .RegisterForm .Register_form{
+    width: 90%;
+    height: 100%;
+    /* color: #fff; */
+}
+
+.RegisterDiv2 .RegisterForm .Register_form div{
+    width: 100%;
+    height: 11%;
+    margin-top: 3%;
+}
+
+.RegisterDiv2 .RegisterForm .Register_form div label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.RegisterDiv2 .RegisterForm .Register_form div input{
+    width: 70%;
+    height: 90%;
+    margin-left: 3%;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+.RegisterDiv2 .RegisterButton{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegisterDiv2 .RegisterButton button{
+    width: 20%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #ff812d;
+    transition: 0.5s;
+}
+
+.RegisterDiv2 .RegisterButton button:hover{
+    border: solid;
+    color: black;
+    background-color: transparent;
+}
