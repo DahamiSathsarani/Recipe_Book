@@ -56,7 +56,7 @@ function Login() {
     <Container className='Login' fluid>
       <div className='LoginCard'>
         <div className='LoginDiv1'>
-          <h2 className='LoginHeader'>WELCOME to <br></br>CookBook</h2>
+          <h2 className='LoginHeader'>WELCOME to <br></br><span>CookBook</span></h2>
           <form onSubmit={handleSubmit} className='LoginForm'>
             <div className='LoginContent'>
               <label htmlFor="email">Email:</label>
@@ -66,7 +66,7 @@ function Login() {
             </div>
             <p>Don't have an account yet!</p>
             <Anchor href="#" class="text-warning" className='LoginLink' onClick={handleSignup}>Sign up</Anchor>
-            <Button type="submit" className='LoginButton'>Login</Button>
+            <button type="submit" className='LoginButton'>Login</button>
           </form>
         </div>
         <div className='LoginDiv2'>

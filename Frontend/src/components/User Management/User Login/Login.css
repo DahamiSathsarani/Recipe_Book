@@ -25,7 +25,12 @@
     font-family: sans-serif;
     font-weight: bold;
     margin-top: 10%;
-    font-size: 25px;
+    font-size: 22px;
+}
+
+.LoginHeader span{
+    color: #ff812d;
+    font-size: 30px;
 }
 
 .LoginForm{
@@ -77,4 +82,8 @@
     width: 280px;
     height: 40px;
     margin-top: 10%;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #ff812d;
 }
