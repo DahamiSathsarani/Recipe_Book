@@ -161,7 +161,6 @@ function AddRecipe() {
                     value={ingredient.quantity}
                     onChange={(e) => handleChange(e, index)}
                     placeholder="Quantity"
-                    required
                     className='AddRecipeInputIngredient'
                   />
                   <input
@@ -170,7 +169,6 @@ function AddRecipe() {
                     value={ingredient.unit}
                     onChange={(e) => handleChange(e, index)}
                     placeholder="Unit"
-                    required
                     className='AddRecipeInputIngredient'
                   />
                 </div>

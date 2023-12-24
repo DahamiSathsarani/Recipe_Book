@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/esm/Button';
-import './ViewRecipe.css'
+import './ViewRecipe.css';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 // import { deleteUser } from '../../../API/User_API';
@@ -12,20 +11,9 @@ function ViewRecipe() {
 
   const { state } = useLocation();
   const recipe = state?.recipe;
-  console.log(recipe);
-  
-
-  // const [student, setStudents] = useState({});
-  
-  //   useEffect(() => {
-  //     async function fetchStudents() {
-  //       const studentData = JSON.stringify(state?.user);
-  //       console.log(studentData);
-  //       setStudents(studentData);
-  //     }
-  
-  //     fetchStudents();
-  //   });
+  const Result = state?.result;
+  const ingredients = Result.ingredientResult;
+  const steps = Result.stepsNames;
 
   const handleProfile = async (err) => {
     err.preventDefault();
@@ -62,14 +50,53 @@ function ViewRecipe() {
     <Container className='ViewRecipe' fluid>
       <h2 >{recipe.title}</h2>
       <Row className='ViewRecipeHeader'>
-        <img className='ViewRecipeImage' src={recipe.imgUrl} alt='recipe.title'>
-            
-        </img>
+        <img className='ViewRecipeImage' src={recipe.imgUrl} alt='recipe.title'></img>
+        <div className=''>
+
+        </div>
       </Row>
-      {/* <div className='button'>
+      <div className='ViewRecipeContent'>
+        <div className='ViewRecipeIngredients'>
+          <div className='ViewRecipeTable'>
+            <div className='ViewRecipeContentHeader'>
+              <h2>You will need ?</h2>
+            </div>
+            <div className='ViewRecipeContent1'>
+              <div className='ViewRecipeContent2'>
+                {ingredients.map((item, index) => (
+                  <div key={index} className='ViewRecipeIngredient'>
+                    <div>
+                      <strong>{item.ingredient_name} :</strong> {item.quantity} {item.unit}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='ViewRecipeSteps'>
+          <div className='ViewRecipeTable'>
+            <div className='ViewRecipeContentHeader'>
+              <h2>Let's make it..</h2>
+            </div>
+            <div className='ViewRecipeContent1'>
+              <div className='ViewRecipeContent2'>
+                {steps.map((item, index) => (
+                  <div key={index} className='ViewRecipeIngredient'>
+                    <div>
+                      <h5>{index+1}. {item.step} </h5>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='ViewRecipeButton'>
         <Button onClick={handleProfile}>Add to Favourites</Button>
-        <Button onClick={handleDelete}>Delete Profile</Button>
-      </div> */}
+        <Button onClick={handleDelete}>Add Comments</Button>
+      </div>
     </Container>
   );
   }

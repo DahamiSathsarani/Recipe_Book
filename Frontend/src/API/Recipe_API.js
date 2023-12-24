@@ -48,7 +48,6 @@ export const getRecipe = async (recipeData) => {
     },
     body: JSON.stringify(recipeData),
   });
-  console.log(JSON.stringify(response))
   if (response.ok) {
     const data = await response.json();
     return data;
