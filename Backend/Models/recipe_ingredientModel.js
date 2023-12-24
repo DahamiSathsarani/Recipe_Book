@@ -14,12 +14,10 @@ const MappingSchema = new mongoose.Schema({
         required: true
     },
     quantity: {
-        type: String,
-        required: true
+        type: String
     },
     unit: {
-        type: String,
-        required: true
+        type: String
     }
   });
 

@@ -1,6 +1,3 @@
-// const multer = require('multer');
-// const {v4: uuidv4} = require('uuid');
-// const path = require('path');
 const { Readable } = require('stream');
 const cloudinary = require('../Configure/cloudinaryConfig');
 const Recipe = require('../Models/recipeModel');
@@ -155,7 +152,6 @@ const createRecipe = async (req, res) => {
 const fetchRecipe = async (req, res) => {
     try {
       const { recipe_id } = req.body;
-      console.log(recipe_id);
       const recipe = await Recipe.findOne({recipe_id: recipe_id});
       if (!recipe) {
         return res.status(404).send('Recipe not found');
@@ -163,11 +159,31 @@ const fetchRecipe = async (req, res) => {
       else {
         try {
           const ingredients = await Recipe_Ingredient_Mapping.find({ recipe_id: recipe_id });
-          console.log(ingredients);
+          const steps = await Recipe_Step_Mapping.find({ recipe_id: recipe_id });
+
+          // Extract ingredient_ids, step_ids from the mappings
+          const ingredientIds = ingredients.map(mapping => mapping.ingredient_id);
+          const stepIds = steps.map(mapping => mapping.step_id);
+
+          // Fetch ingredientName, stepName based on ingredient_ids and step_ids
+          const ingredientsNames = await Ingredient.find({ ingredient_id: { $in: ingredientIds } });
+          const stepsNames = await Step.find({ step_id: { $in: stepIds } });
+
+          // Combine ingredient details with the corresponding mapping details
+          const ingredientResult = ingredients.map(mapping => {
+            const ingredientName = ingredientsNames.find(ingredient => ingredient.ingredient_id === mapping.ingredient_id);
+            return {
+              ingredient_name: ingredientName.ingredient_name,
+              quantity: mapping.quantity,
+              unit: mapping.unit,
+            };
+          });
+
+          res.status(200).json({ success: true, ingredientResult, stepsNames });
+
         } catch (error) {
           console.error(error);
         }
-        res.status(200).json({ success: true, recipe });
       }
     
     } catch (error) {
