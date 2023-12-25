@@ -3,29 +3,105 @@
     height: 100vh;
 }
 
+.UserDashboardNav{
+    height: 60px;
+    box-shadow: 0 0 10px gray;
+}
+
+.UserDashboardNavbarTitle{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserDashboardNavbarTitleBrand{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #e47831;
+}
+
+.UserDashboardNavbarLinks{
+    width: 60%;
+    height: 100%;
+}
+
+.UserDashboardNavbarLinksNav{
+    margin: 0 0 0 20px;
+}
+
+.UserDashboardNavbarButton{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserDashboardButton{
+    width: 90%;
+}
+
+.UserDashboardButton Button{
+    width: 35%;
+    height: 70%;
+    margin-left: 5%;
+    transition: 0.2s;
+}
+
+.UserDashboardButtonProfile{
+    color: #eb8846;
+    font-weight: 400;
+    background-color: #fff;
+    border: solid 1.5px #eb8846;
+}
+
+.UserDashboardButtonProfile:hover{
+    border: solid 2px #eb8846;
+    font-weight: 500;
+    color: #eb8846;
+    background-color: #fff;
+}
+
+.UserDashboardButtonLogout{
+    color: #fff;
+    border: none;
+    background-color: rgb(210, 76, 76);
+}
+
+.UserDashboardButtonLogout:hover{
+    background-color: rgb(196, 53, 53);
+}
+
+.UserDashboardSideBar{
+    position: absolute;
+    top: 0;
+    color: #fff;
+}
+
 .UserDashboardContent{
     display: flex;
     height: 100vh; 
     overflow: scroll initial;
 }
 
-.UserDashboardSideBar{
-    position: absolute;
-    top: 0;
-    background-color: black;
-    color: #fff;
-}
-
-.UserDashboardButton{
-    width: 25%;
-}
-
-.UserDashboardButton Button{
-    width: 40%;
-    margin-left: 5%;
-}
-
 .UserDashboardCard{
     width: 100%;
     height: 40%;
+    transition: 0.3s;
+}
+
+.UserDashboardCard:hover{
+    box-shadow: 0 0 15px gray;
+}
+
+.UserDashboardCardBody{
+    background-color: #eb8846;
+    transition: 0.3s;
+}
+
+.UserDashboardCardBody:hover{
+    background-color: #e47831;
 }
