@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 
 const Recipe_Step_Schema = new mongoose.Schema({
     mapping_id: {
-        type: String,
+        type: Number,
         required: true
     },
     recipe_id: {
-        type: String,
+        type: Number,
         required: true
     },
     step_id: {
-        type: String,
+        type: Number,
         required: true
     },
   });
