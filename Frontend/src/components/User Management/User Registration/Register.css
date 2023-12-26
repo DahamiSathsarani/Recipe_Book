@@ -7,8 +7,8 @@
 }
 
 .RegisterCard{
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 90%;
     display: flex;
     border-radius: 15px;
     box-shadow: 0 0 10px gray;
@@ -67,7 +67,7 @@
 .RegisterDiv2 .RegisterForm .Register_form div{
     width: 100%;
     height: 11%;
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 .RegisterDiv2 .RegisterForm .Register_form div label{

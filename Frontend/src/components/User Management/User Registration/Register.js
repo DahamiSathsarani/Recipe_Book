@@ -12,21 +12,32 @@ function Register() {
     phone: '',
     nic: '',
     dob: '',
+    userProPic: null,
     password: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, type, files } = e.target;
+    const fieldValue = type === 'file' ? files[0] : value;
+
+    if (type === 'file') {
+      setFormData({
+        ...formData,
+        [name]: fieldValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: fieldValue,
+      });
+    }
   };
 
   const handleSubmit = async (err) => {
     err.preventDefault();
     try {
         const response = await createUser(formData);
+        console.log(response);
     
         if (response.success) {
           // Data was successfully registered
@@ -76,6 +87,10 @@ function Register() {
                 <input type="text" id="dob" name="dob" value={formData.dob} onChange={handleChange}/>
               </div>
               <div>
+                <label htmlFor="userProPic">Upload Profile Picture :</label>
+                <input type="file" id="userProPic" name="userProPic" onChange={handleChange}/>
+              </div>
+              <div>
                 <label htmlFor="password">Password :</label>
                 <input type="text" id="password" name="password" value={formData.password} onChange={handleChange}/>
               </div>
@@ -83,10 +98,10 @@ function Register() {
                 <label htmlFor="password">Confirm Password :</label>
                 <input type="text" id="password" name="password" value={formData.password} onChange={handleChange}/>
               </div> */}
+              <div className='RegisterButton'>
+                <button type="submit">Create</button>
+              </div>
             </form>
-          </div>
-          <div className='RegisterButton'>
-            <button type="submit">Create</button>
           </div>
         </div>
       </div>
