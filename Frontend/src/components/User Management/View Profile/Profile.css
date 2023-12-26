@@ -1,8 +1,49 @@
-.button{
-    margin-left: 20px;
-    width: 150px;
+.Profile{
+    margin-top: 3%;
 }
 
-.button button{
-    width: 150px;
+.ProfileImage{
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+}
+
+.ProfilePersonalDetails{
+    border-radius: 20px;
+    box-shadow: 0 0 10px gray;
+}
+
+.ProfilePersonalDetailsContent{
+    margin: 5%;
+}
+
+.Profile .ProfileHeader h2{
+    margin-top: 2%;
+    font-size: 40px;
+}
+
+.Profile Button{
+    width: 100%;
+    height: 10%;
+    margin-top: 5%;
+    border: none;
+    background-color: #eb8846;
+}
+
+.Profile Button:hover{
+    background-color: #e47831;
+}
+
+.ProfileMyrecipesCard{
+    background-color: #eb8846;
+    transition: 0.2s;
+}
+
+.ProfileMyrecipesCard:hover{
+    background-color: #e47831;
+    box-shadow: 0 0 10px gray;
+}
+
+.ProfileMyrecipesCardTitle{
+    color: #fff;
 }
