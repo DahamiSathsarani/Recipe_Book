@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 
 const userController = require('../Controllers/userController');
 
-router.post('/createUser', userController.createUser);
+// Set up multer for file uploads
+const storage = multer.memoryStorage(); // Use memory storage for handling file as a buffer
+const upload = multer({ storage });
+
+router.post('/createUser', upload.single('userProPic'), userController.createUser);
 router.get('/fetchUsers', userController.fetchUsers);
 router.post('/fetchUser', userController.fetchUser);
 router.patch('/updateUser', userController.updateUser);
