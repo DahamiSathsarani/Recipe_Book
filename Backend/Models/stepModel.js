@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const StepSchema = new mongoose.Schema({
     step_id: {
-        type: String,
+        type: Number,
         required: true
     },
     step: {
