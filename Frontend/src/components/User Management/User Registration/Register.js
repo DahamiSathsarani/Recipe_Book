@@ -37,7 +37,6 @@ function Register() {
     err.preventDefault();
     try {
         const response = await createUser(formData);
-        console.log(response);
     
         if (response.success) {
           // Data was successfully registered
