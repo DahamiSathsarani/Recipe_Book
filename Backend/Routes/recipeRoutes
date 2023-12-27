@@ -9,7 +9,7 @@ const storage = multer.memoryStorage(); // Use memory storage for handling file 
 const upload = multer({ storage });
 
 router.post('/createRecipe', upload.single('recipePic'), recipeController.createRecipe);
-router.get('/fetchRecipes', recipeController.fetchRecipes);
+router.get('/fetchRecipes/:id', recipeController.fetchRecipes);
 router.post('/fetchRecipe', recipeController.fetchRecipe);
 router.patch('/updateRecipe', recipeController.updateRecipe);
 router.patch('/softDeleteRecipe/:id', recipeController.softDeleteRecipe);
