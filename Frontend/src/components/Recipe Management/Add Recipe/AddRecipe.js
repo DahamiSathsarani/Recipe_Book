@@ -25,7 +25,6 @@ function AddRecipe() {
     const fetchCategories = async () => {
       try {
         const response = await getCategories();
-        console.log(response);
         
         if (Array.isArray(response)) {
           setCategories(response);
@@ -92,7 +91,7 @@ function AddRecipe() {
           // Data was successfully registered
           alert("Added Successful")
           // Navigate to the StudentDetails route
-          navigate('/UserDashboard');
+          navigate('/UserDashboard', { state: { user: user } });
 
         } else {
           alert('Adding recipe failed. Please try again.');
