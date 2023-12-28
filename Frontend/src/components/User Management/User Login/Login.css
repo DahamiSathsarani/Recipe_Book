@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-image: url('../../../../public/Images/LoginBg.jpg');
+    background-size: cover; */
 }
 
 .LoginCard{
