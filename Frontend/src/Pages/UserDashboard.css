@@ -20,7 +20,7 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 30px;
     font-weight: 400;
-    color: #e47831;
+    color: #ff812d;
 }
 
 .UserDashboardNavbarLinks{
@@ -52,10 +52,10 @@
 }
 
 .UserDashboardButtonProfile{
-    color: #eb8846;
+    color: #ff812d;
     font-weight: 400;
     background-color: #fff;
-    border: solid 1.5px #eb8846;
+    border: solid 1.5px #ff812d;
 }
 
 .UserDashboardButtonProfile:hover{
@@ -93,15 +93,21 @@
     transition: 0.3s;
 }
 
+.UserDashboardCardLink{
+    width: 100%;
+    height: 190px;
+}
+
 .UserDashboardCard:hover{
     box-shadow: 0 0 15px gray;
 }
 
 .UserDashboardCardBody{
-    background-color: #eb8846;
+    color: #fff;
+    background-color: #ff812d;
     transition: 0.3s;
 }
 
 .UserDashboardCardBody:hover{
-    background-color: #e47831;
+    background-color: #ff6a07;
 }
