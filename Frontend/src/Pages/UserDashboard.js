@@ -27,6 +27,7 @@ function UserDashboard() {
     const { state } = useLocation();
     const user = state?.user;
     const chef = user.user;
+    const firstName = chef.name.split(' ')[0];
     const navigate = useNavigate();
 
     const [recipes, setRecipes] = useState([]);
@@ -61,13 +62,18 @@ function UserDashboard() {
       navigate('/Login');
     };
 
-    const handleRecipeLink = async (recipe) => {
-
+    const handleAddRecipe = async () => {
       try {
-        const response = await getRecipe(recipe);
-        
+        navigate('/UserDashboard/AddRecipe', { state: { user: user }  });
+      } catch (error) {
+        alert('An error occurred. Please try again..');
+      }
+    };
+
+    const handleRecipeLink = async (recipe) => {
+      try {
         // Navigate to the recipe route
-        navigate('/UserDashboard/ViewRecipe', { state: { recipe: recipe, result: response } });
+        navigate('/UserDashboard/ViewRecipe', { state: { recipe: recipe,  user: user} });
       } catch (error) {
         alert('An error occurred. Please try again..');
       }
@@ -92,12 +98,12 @@ function UserDashboard() {
         </div>
         <div className='UserDashboardNavbarButton'>
           <div className='UserDashboardButton'>
-            <Button className='UserDashboardButtonProfile' onClick={handleProfile}>Pula</Button>
+            <Button className='UserDashboardButtonProfile' onClick={handleProfile}>{firstName}</Button>
             <Button className='UserDashboardButtonLogout' onClick={handleLogout}>Log out</Button>
           </div>
         </div>
       </Navbar>
-      <div className='UserDashboardContent'>
+      <Container className='UserDashboardContent'>
           {/* <CDBSidebar className="UserDashboardSideBar">
             <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
               <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}> Recipe Book </a>
@@ -130,23 +136,24 @@ function UserDashboard() {
               </div>
             </CDBSidebarFooter>
           </CDBSidebar> */}
-          <Container>
-            <Row xs={1} md={2} lg={5} className="g-4 mt-3 UserDashboardCardRow">
-              {recipes.map((recipe) => (
-                <Col key={recipe._id}>
-                  <Card className='UserDashboardCard' onClick={() => handleRecipeLink(recipe)}>
-                    <Link className='UserDashboardCardLink'>
-                      <Card.Img variant="top" src={recipe.imgUrl} alt={recipe.title} />
-                    </Link>
-                    <Card.Body className='UserDashboardCardBody'> 
-                      <Card.Title>{recipe.title}</Card.Title>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-      </div>
+          <Row xs={1} md={3} lg={6} className="g-4 mt-3 ">
+            {recipes.map((recipe) => (
+              <Col key={recipe._id}>
+                <Card className='UserDashboardCard' onClick={() => handleRecipeLink(recipe)}>
+                  <Link className='UserDashboardCardLink'>
+                    <Card.Img variant="top" src={recipe.imgUrl} alt={recipe.title} className='UserDashboardCardImage'/>
+                  </Link>
+                  <Card.Body className='UserDashboardCardBody d-flex align-items-center justify-content-center'> 
+                    <Card.Title>{recipe.title}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+      </Container>
+      <Row>
+        <Button onClick={handleAddRecipe}>Add recipe</Button>
+      </Row>
     </section>
     
   );
