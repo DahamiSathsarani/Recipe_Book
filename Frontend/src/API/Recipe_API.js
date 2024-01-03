@@ -31,11 +31,17 @@ export const createRecipe = async (recipeData, user_id) => {
     if (response.ok) {
       const data = await response.json();
       return { success: true, data };
-    }
-  };
-
+  }
+};
+  
 export const getRecipes = async () => {
-  const response = await fetch(`${baseURL}/fetchRecipes`);
+  const response = await fetch(`${baseURL}/fetchRecipes/${0}`);
+  const data = await response.json();
+  return data;
+};
+
+export const getSpecificUserRecipes = async (user_id) => {
+  const response = await fetch(`${baseURL}/fetchRecipes/${user_id}`);
   const data = await response.json();
   return data;
   };
@@ -53,6 +59,12 @@ export const getRecipe = async (recipeData) => {
     return data;
   }
 };
+
+export const getCategorizedRecipes = async (category_id) => {
+  const response = await fetch(`${baseURL}/fetchCategorizedRecipes/${category_id}`);
+  const data = await response.json();
+  return data;
+  };
 
 
 
