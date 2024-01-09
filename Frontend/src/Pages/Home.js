@@ -6,8 +6,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
-// import Row from 'react-bootstrap/Row';
-// import Anchor from 'react-bootstrap/Anchor';
+import Row from 'react-bootstrap/Row';
+import Anchor from 'react-bootstrap/Anchor';
+// import Form from 'react-bootstrap/Form';
+// import Modal from 'react-bootstrap/Modal';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { useNavigate } from 'react-router-dom';
 
@@ -59,6 +61,12 @@ function Home() {
         // Navigate to the StudentDetails route
         navigate('/Register');
     };
+
+    // const [show, setShow] = useState(false);
+
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
+
   return (
     <section className=''>
       <Navbar expand="lg" className="bg-body-tertiary UserDashboardNav">
@@ -69,25 +77,25 @@ function Home() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='d-flex justify-content-center'>
             <Nav>
-              <Nav.Link href="#home" className='UserDashboardNavbarLinksNav'>Home</Nav.Link>
-              <Nav.Link href="#services" className='UserDashboardNavbarLinksNav'>Services</Nav.Link>
+              <Nav.Link href="#Home" className='UserDashboardNavbarLinksNav'>Home</Nav.Link>
+              <Nav.Link href="#Services" className='UserDashboardNavbarLinksNav'>Services</Nav.Link>
               <NavDropdown title="Categories" id="basic-nav-dropdown" className='UserDashboardNavbarLinksNav'>
                 {categories.map(category => (
                   <NavDropdown.Item key={category._id} onClick={() => handleCategories(category.category_id)}> {category.category_name} </NavDropdown.Item>
                 ))}
               </NavDropdown>
-              <Nav.Link href="#contact" className='UserDashboardNavbarLinksNav'>Chefs</Nav.Link>
+              <Nav.Link href="#Chef" className='UserDashboardNavbarLinksNav'>Chefs</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </div>
-        <div className='UserDashboardNavbarButton'>
-          <div className='UserDashboardButton'>
+        <div className='HomeNavbarButton'>
+          <div className='HomeButton'>
             <Button className='HomeSignIn' onClick={handleSignIn}>Sign In</Button>
             <Button className='HomeSignUp' onClick={handleSignUp}>Sign Up</Button>
           </div>
         </div>  
       </Navbar>
-      <Container className="Home" fluid>
+      <Container className="Home" id='Home' fluid>
         <Carousel>
           <Carousel.Item>
           <img className = "HomeImage" src='/Images/Home1.jpg' alt='home'/>
@@ -103,27 +111,66 @@ function Home() {
           </Carousel.Item>
         </Carousel>
       </Container>
-      {/* <Container className='Services mt-5'>
+      <Container className='Services mt-5' id='Services'>
         <Row>
           <div className='ServicesHeader'>
             <h1>Our Services</h1>
           </div>
         </Row>
         <Row className='m-3 ServicesContent'>
-          <div className='col-md-4'>
-            <h1>Explore best recipes</h1>
-            <h1>Explore best recipes</h1>
+          <div className='col-md-3'>
+            <Anchor className='ServicesAnchor'>
+              <h3>Recipe Search</h3>
+              <p>Find delicious recipes based on your preferences.</p>
+            </Anchor>
           </div>
-          <div className='col-md-4'>
-          <h1>Explore best recipes</h1>
-          <h1>Explore best recipes</h1>
+          <div className='col-md-3'>
+            <Anchor className='ServicesAnchor' href=''>
+              <h3>User Accounts</h3>
+              <p>Create an account to save your favorite recipes and interact with the community.</p>
+            </Anchor>
           </div>
-          <div className='col-md-4'>
-          <h1>Explore best recipes</h1>
-          <h1>Explore best recipes</h1>
+          <div className='col-md-3'>
+            <Anchor className='ServicesAnchor'>
+              <h3>Community Interaction</h3>
+              <p>Join the conversation, ask questions, and share your cooking experiences in our community forum.</p>
+            </Anchor>
+          </div>
+          <div className='col-md-3'>
+            <Anchor className='ServicesAnchor'>
+              <h3>Newsletter Subscription</h3>
+              <p>Subscribe to our newsletter for updates, new recipes, and cooking tips.</p>
+            </Anchor>
           </div>
         </Row>
-      </Container> */}
+
+        {/* <Modal show={show} onHide={handleClose}
+        {...props}
+          aria-labelledby="contained-modal-title-vcenter"
+          centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Newsletter Subscription</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="name@example.com"
+                  autoFocus
+                />
+              </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleSubscribe}>
+              Subscribe
+            </Button>
+          </Modal.Footer>
+        </Modal> */}
+
+      </Container>
     </section>
   );
 }
