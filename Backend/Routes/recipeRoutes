@@ -10,6 +10,7 @@ const upload = multer({ storage });
 
 router.post('/createRecipe', upload.single('recipePic'), recipeController.createRecipe);
 router.get('/fetchRecipes/:id', recipeController.fetchRecipes);
+router.get('/fetchCategorizedRecipes/:category_id', recipeController.fetchCategorizedRecipes);
 router.post('/fetchRecipe', recipeController.fetchRecipe);
 router.patch('/updateRecipe', recipeController.updateRecipe);
 router.patch('/softDeleteRecipe/:id', recipeController.softDeleteRecipe);

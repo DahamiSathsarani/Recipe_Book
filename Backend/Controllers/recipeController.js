@@ -193,7 +193,25 @@ const fetchRecipe = async (req, res) => {
 
 const fetchRecipes = async (req, res) => {
     try {
-      const recipes = await Recipe.find();
+      const { id } = req.params;
+      if(id == 0){
+        const recipes = await Recipe.find();
+        res.status(201).send(recipes);
+      }
+      else{
+        const recipes = await Recipe.find({user_id: id});
+        res.status(201).send(recipes);
+      }
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  }
+
+const fetchCategorizedRecipes = async (req, res) => {
+    try {
+      const { category_id } = req.params;
+      
+      const recipes = await Recipe.find({category_id: category_id});
       res.status(201).send(recipes);
     } catch (error) {
       res.status(500).send(error);
@@ -237,10 +255,11 @@ const softDeleteRecipe = async (req, res) => {
 
 const deleteRecipe = async (req, res) => {
     const id = req.params.id;
+    console.log(id);
     try {
-      const deletedUser = await User.findOneAndDelete({user_id: id});
-      if (!deletedUser) {
-        return res.status(404).send('Student not found');
+      const deletedRecipe = await Recipe.findOneAndDelete({recpe_id: id});
+      if (!deletedRecipe) {
+        return res.status(404).send('Recipe not found');
       }
       res.send('Successfully deleted');
     } catch (error) {
@@ -252,6 +271,7 @@ module.exports = {
     createRecipe,
     fetchRecipe,
     fetchRecipes,
+    fetchCategorizedRecipes,
     updateRecipe,
     softDeleteRecipe,
     deleteRecipe,
