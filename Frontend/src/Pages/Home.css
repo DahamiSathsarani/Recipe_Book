@@ -1,9 +1,10 @@
-.UserDashboardButton Button{
+.HomeButton Button{
   background-color: #ff812d;
   border: none;
+  margin-left: 20px;
 }
 
-.UserDashboardButton Button:hover{
+.HomeButton Button:hover{
   background-color: #fb6400;
 }
 
@@ -32,8 +33,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ff812d;
 }
 
 .ServicesContent div{
-  border: solid 2px #ff812d;
+  padding: 50px;
+}
+
+.ServicesContent div:hover{
+  border: solid #ff812d;
+}
+
+.ServicesAnchor{
+  text-decoration: none;
+  color: black;
+}
+
+.ServicesContent div h3{
+  text-align: center;
+}
+
+.ServicesContent div p{
+  font-size: 18px;
+  text-align: center;
 }
