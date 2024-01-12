@@ -7,6 +7,7 @@ const userRoutes = require('./Routes/userRoutes');
 const categoryRoutes = require('./Routes/categoryRoutes');
 const recipeRoutes = require('./Routes/recipeRoutes');
 const ingredientRoutes = require('./Routes/ingredientRoutes');
+const subscriptionRoutes = require('./Routes/subscriptionRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use('/', userRoutes);
 app.use('/', categoryRoutes);
 app.use('/', recipeRoutes);
 app.use('/', ingredientRoutes);
+app.use('/', subscriptionRoutes);
 
 //getting the database url
 const URL = process.env.MONGODB_URL;

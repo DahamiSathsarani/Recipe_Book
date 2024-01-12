@@ -8,15 +8,16 @@ import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import Row from 'react-bootstrap/Row';
 import Anchor from 'react-bootstrap/Anchor';
-// import Form from 'react-bootstrap/Form';
-// import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { useNavigate } from 'react-router-dom';
 
 import { getCategories } from '../API/Category_API';
 import { getCategorizedRecipes } from '../API/Recipe_API';
+import { createSubscription } from '../API/Subscription_API';
 
-function Home() {
+function Home(props) {
     const navigate = useNavigate();
 
     const [categories, setCategories] = useState([]);
@@ -62,10 +63,22 @@ function Home() {
         navigate('/Register');
     };
 
-    // const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
+    const [email, setEmail] = useState();
 
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const handleSubscribe = async () => {
+      try{
+        const response = await createSubscription(email);
+        if(response.success){
+          alert("Successfully subscribed!");
+        }
+      }catch{
+        alert('An error occurred. Please try again..');
+      }
+    }
 
   return (
     <section className=''>
@@ -137,15 +150,15 @@ function Home() {
             </Anchor>
           </div>
           <div className='col-md-3'>
-            <Anchor className='ServicesAnchor'>
+            <Anchor className='ServicesAnchor' onClick={handleShow}>
               <h3>Newsletter Subscription</h3>
               <p>Subscribe to our newsletter for updates, new recipes, and cooking tips.</p>
             </Anchor>
           </div>
         </Row>
 
-        {/* <Modal show={show} onHide={handleClose}
-        {...props}
+        <Modal show={show} onHide={handleClose} className='SubscriptionModal'
+          {...props}
           aria-labelledby="contained-modal-title-vcenter"
           centered>
           <Modal.Header closeButton>
@@ -156,19 +169,21 @@ function Home() {
               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
+                  id='email'
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder="name@gmail.com"
                   autoFocus
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Form.Group>
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleSubscribe}>
+            <Button onClick={handleSubscribe} className='SubscribeButton'>
               Subscribe
             </Button>
           </Modal.Footer>
-        </Modal> */}
+        </Modal>
 
       </Container>
     </section>

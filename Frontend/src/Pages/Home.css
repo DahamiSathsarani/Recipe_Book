@@ -57,3 +57,8 @@
   font-size: 18px;
   text-align: center;
 }
+
+.SubscriptionModal .SubscribeButton{
+  border: none;
+  background-color: #ff812d;
+}
