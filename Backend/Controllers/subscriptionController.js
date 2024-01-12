@@ -4,7 +4,7 @@ const createSubscription = async(req,res) => {
 
     try {
         const { email } = req.body;
-        console.log(email);
+        
         const existingEmail = await Subscription.findOne({ email: email });
 
         if(!existingEmail){
@@ -19,11 +19,11 @@ const createSubscription = async(req,res) => {
             } else {
                 subscription_id = 1;
             }
-            const newSubscription = Subscription.create( {subscription_id, email} );
+            const newSubscription = await Subscription.create( {subscription_id, email} );
 
-            res.status(201).send({ success: true, message: 'Subscribed successfully.', newSubscription });
+            res.status(201).send({ success: true, message: 'Successfully Subscribed' });
         }else{
-            res.status(200).send({ success: false, message: 'Already Subscribed.' });
+            res.status(200).send({ success: false, message: 'Already Subscribed' });
         }
         
     }catch(error){
