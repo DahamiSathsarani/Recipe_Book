@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Anchor from 'react-bootstrap/Anchor';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+// import { FaCheckCircle } from 'react-icons/fa';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { useNavigate } from 'react-router-dom';
 
@@ -64,6 +65,7 @@ function Home(props) {
     };
 
     const [show, setShow] = useState(false);
+    // const [showSuccessModal, setShowSuccessModal] = useState(false);
     const [email, setEmail] = useState();
 
     const handleClose = () => setShow(false);
@@ -72,8 +74,13 @@ function Home(props) {
     const handleSubscribe = async () => {
       try{
         const response = await createSubscription(email);
-        if(response.success){
-          alert("Successfully subscribed!");
+        
+        if(response.data.message === "Successfully Subscribed"){
+          alert("Successfully Subscribed !");
+        }else if(response.data.message === "Already Subscribed"){
+          alert("Already Subscribed !");
+        }else{
+          alert("Error subscribing")
         }
       }catch{
         alert('An error occurred. Please try again..');
@@ -179,11 +186,13 @@ function Home(props) {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={handleSubscribe} className='SubscribeButton'>
+            <Button onClick={() => {handleSubscribe(); handleClose();}} className='SubscribeButton'>
               Subscribe
             </Button>
           </Modal.Footer>
         </Modal>
+
+        
 
       </Container>
     </section>
