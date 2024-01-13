@@ -47,7 +47,7 @@ function Home(props) {
           const response = await getCategorizedRecipes(category_id);
           console.log(response);
             // Navigate to the categorized recipes route
-            navigate('/Categories', { state: { recipes: response } });
+            navigate('/Categories', { state: { recipes: response, category_id: category_id } });
   
         } catch (error) {
           alert('An error occurred. Please try again..');
