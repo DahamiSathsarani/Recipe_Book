@@ -25,7 +25,7 @@ function App() {
           <Route path="/UserDashboard/Profile/UpdateProfile" element={<UpdateProfile />} />
           <Route path="/UserDashboard/AddRecipe" element={<AddRecipe />} />
           <Route path="/UserDashboard/ViewRecipe" element={<ViewRecipe />} />
-          <Route path="/CategorizedRecipes" element={<CategorizedRecipes />} />
+          <Route path="/Categories" element={<CategorizedRecipes />} />
 
         </Routes>
       </div>
