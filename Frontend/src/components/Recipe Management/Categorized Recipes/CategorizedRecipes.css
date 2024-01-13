@@ -1,0 +1,29 @@
+.CategorizedRecipesHeader{
+}
+
+.CategorizedRecipesNavbarTitle{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CategorizedRecipesNavbarLinks{
+    width: 40%;
+    height: 100%;
+}
+
+.CategorizedRecipesNavBarSearch{
+    width: 30%;
+    height: 100%;
+    display: flex;
+}
+
+.CategorizedRecipesSerachInput{
+    width: 70%;
+    height: 35px;
+    padding: 15px;
+    border-radius: 5px;
+    border: solid 1px;
+}
