@@ -10,6 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Anchor from 'react-bootstrap/Anchor';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 // import { FaCheckCircle } from 'react-icons/fa';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { useNavigate } from 'react-router-dom';
@@ -130,6 +132,19 @@ function Home(props) {
           <img className = "HomeImage" src='/Images/Home3.jpg' alt='home'/>
           </Carousel.Item>
         </Carousel>
+      </Container>
+      <Container className='mt-5'>
+        <Row>
+          {categories.map((category) => (
+            <Col key={category._id}>
+              <Card className='CategoryCard' onClick={() => handleCategories(category.category_id)}>
+                <Card.Body className='CategoryCardBody d-flex align-items-center justify-content-center'> 
+                  <Card.Title>{category.category_name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </Container>
       <Container className='Services mt-5' id='Services'>
         <Row>
