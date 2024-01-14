@@ -73,3 +73,27 @@
   border: none;
   background-color: #ff812d;
 }
+
+.Footer{
+  background-color: #ff812d;
+}
+
+.FooterSearchBar{
+  width: 50%;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.FooterIcons{
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 10px;
+  margin: 5px;
+  color: #fb6400;
+}
+
+.Footer h5{
+  color: #fff;
+}

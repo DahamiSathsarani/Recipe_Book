@@ -15,6 +15,10 @@ import Col from 'react-bootstrap/Col';
 // import { FaCheckCircle } from 'react-icons/fa';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 import { getCategories } from '../API/Category_API';
 import { getCategorizedRecipes } from '../API/Recipe_API';
@@ -206,9 +210,33 @@ function Home(props) {
             </Button>
           </Modal.Footer>
         </Modal>
-
-        
-
+      </Container>
+      <Container className='Footer' fluid>
+        <Row>
+          <div className='d-flex align-items-center justify-content-center m-5'>
+            <input
+              className='FooterSearchBar'
+              placeholder='Search here'>
+            </input>
+            {/* <div className='input-group-append'>
+              <span className='input-group-text'>
+              <FontAwesomeIcon icon={faSearch} />
+              </span>
+            </div> */}
+          </div>
+        </Row>
+        <Row>
+          <div className='d-flex align-items-center justify-content-center'>
+            <FontAwesomeIcon icon={faFacebook} className='FooterIcons'/> 
+            <FontAwesomeIcon icon={faInstagram} className='FooterIcons'/>  
+            <FontAwesomeIcon icon={faYoutube} className='FooterIcons'/>   
+          </div>
+        </Row>
+        <Row>
+          <div className='d-flex align-items-center justify-content-center mt-5'>
+            <h5>Copyright 2024</h5>
+          </div>
+        </Row>
       </Container>
     </section>
   );
