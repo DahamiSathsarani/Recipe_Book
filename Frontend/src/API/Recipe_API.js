@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:8080';
 
 export const createRecipe = async (recipeData, user_id) => {
   console.log("user_id", user_id)

@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:8080';
 
 export const getCategories = async () => {
     const response = await fetch(`${baseURL}/fetchCategories`);
